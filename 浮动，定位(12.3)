@@ -1,0 +1,160 @@
+盒子模型：
+
+	盒子尺寸设置
+		box-sizing:content-box(默认)|border-box(直接设置盒子宽高)|inherit(继承父元素)
+	
+	圆角边框border-radius：
+		border-radius:px(弧度，左上开始顺时针)
+		圆形：元素高宽一致，boder-radius圆角半径值为元素一半，或者50%。
+		半圆：width：100px；height：50px；border-radius：50px 50px 0px 0px；
+		扇形：“三同，一不同”（50px 0px 0px 0px）
+		
+	盒子阴影box-shadow：10px 20px 10px red；
+		inset内阴影 x-offset y-offset blur-radius阴影模糊半径 color颜色；
+		多层可直接,隔开 
+		
+浮动：
+	1，display属性：
+		block 元素显示为块级元素，前后带有换行符
+		inline 元素显示为内联元素，前后没有换行符
+		inline-block 行内块元素，同时具有内联和块元素特性
+		none 该元素不会显示
+	2，float属性
+		left 左浮动 right 右浮动 none 默认值，元素不浮动，并显示在其文本中出现的位置
+	3，inline-block和float的区别
+		display：inline-block
+		可以让元素排在一行，支持宽度和高度
+		位置方向不可控，会解析空格
+		IE6，IE7上不支持
+		float：
+		可以让元素排在一行，支持宽度和高度，可以决定排列方向
+		float浮动以后元素脱离文档流，会对周围元素产生影响，必须在它的父级上添加清除浮动的样式
+	4，清除浮动clear
+		left 在左侧不允许浮动元素 right both 左右都不允许 none 默认值
+	5，父级边框塌陷
+		浮动元素后面加空div
+		设置父元素的高度
+		父级添加overflow属性
+			visible 默认值
+			hidden 内容会被修剪，并且不可见
+			scroll 内容会被修剪，但是浏览器会显示滚动条以便查看
+			auto 如果内容被修剪，则浏览器会显示滚动条以便查看
+		父级添加伪类after
+			.clear:after{
+			content:'';
+			display:block;
+			clear:both;
+			}//在clear类后面添加内容空，转化为块元素，清楚两边浮动
+			
+定位网页元素 
+	1，position属性
+	   position:relative
+	   left:20px
+	   top:20px
+			static 默认值
+			relative 相对定位
+				top left right bottom 相对自身原来位置进行偏移，设置相对定位的盒子仍在标准文档流中， 
+				对父级盒子和相邻盒子没影响，原位置会被保留，层级提高
+			absolute 绝对定位
+				top left right bottom 以最近的“已经定位”的“祖先元素”为基准偏移，没有则以浏览器窗口，
+				会脱离标准文档，对其他元素定位无影响，原位置不会保留，层级提高
+				下拉菜单，焦点轮播图，弹出数字气泡，特别花边等
+			fixed 固定定位
+				类似绝对定位，但是只以浏览器窗口进行定位不随滚动条移动
+				固定广告，返回顶部图标，吸顶导航栏等
+	2，z-index属性 
+		z-index：整数，默认值0
+		设置了position属性时，z-index属性可以设置个元素之间的重叠高低关系
+		z-index值大的层次位于其值小的层上方 
+	3，css设置透明度
+		opacity:x （0~1值越小越透明，opacity:0.4;）
+		filter:alpha(opacity=x) （x值0~100，越小越透明，filter:alpha(opacity=40);）
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
